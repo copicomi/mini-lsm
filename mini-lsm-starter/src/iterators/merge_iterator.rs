@@ -140,6 +140,7 @@ impl<I: 'static + for<'a> StorageIterator<KeyType<'a> = KeySlice<'a>>> StorageIt
             if *current < *inner_iter {
                 std::mem::swap(&mut *inner_iter, current);
             }
+            return Ok(());
         }
         Ok(())
     }
