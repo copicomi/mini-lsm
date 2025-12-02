@@ -24,7 +24,7 @@ use bytes::BufMut;
 use super::{BlockMeta, SsTable};
 use crate::{
     block::BlockBuilder,
-    key::{Key, KeySlice, KeyVec},
+    key::{KeySlice, KeyVec},
     lsm_storage::BlockCache,
     table::FileObject,
 };
@@ -86,7 +86,7 @@ impl SsTableBuilder {
     /// Since the data blocks contain much more data than meta blocks, just return the size of data
     /// blocks here.
     pub fn estimated_size(&self) -> usize {
-        return self.data.len();
+        self.data.len()
     }
 
     /// Builds the SSTable and writes it to the given path. Use the `FileObject` structure to manipulate the disk objects.
