@@ -66,7 +66,7 @@ impl BlockIterator {
     }
 
     /// Returns the key of the current entry.
-    pub fn key(&self) -> KeySlice {
+    pub fn key(&self) -> KeySlice<'_> {
         debug_assert!(self.is_valid(), "invalid iterator");
         self.key.as_key_slice()
     }

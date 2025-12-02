@@ -60,7 +60,7 @@ impl BlockBuilder {
         }
         self.offsets.push(self.data.len() as u16);
         self.data.put_u16(key.len() as u16);
-        self.data.put(&key.raw_ref()[..]);
+        self.data.put(key.raw_ref());
         self.data.put_u16(value.len() as u16);
         self.data.put(value);
 
